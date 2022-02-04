@@ -1,0 +1,103 @@
+basePath: /
+definitions:
+  controllers.CreateBookInput:
+    properties:
+      author:
+        type: string
+      title:
+        type: string
+    required:
+    - author
+    - title
+    type: object
+  controllers.UpdateBookInput:
+    properties:
+      author:
+        type: string
+      title:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Simple REST API for managing books
+  title: Book API
+  version: 0.0.1
+paths:
+  /books:
+    get:
+      description: return all books in json
+      produces:
+      - application/json
+      responses: {}
+      summary: Get books
+      tags:
+      - books
+    post:
+      consumes:
+      - application/json
+      description: write book info into db
+      parameters:
+      - description: book title
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/controllers.CreateBookInput'
+      produces:
+      - application/json
+      responses: {}
+      summary: Create book
+      tags:
+      - books
+  /books/{id}:
+    delete:
+      description: remove book from db with given id
+      parameters:
+      - description: Book ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses: {}
+      summary: Delete book
+      tags:
+      - books
+    get:
+      description: search for book with given id
+      parameters:
+      - description: Book ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses: {}
+      summary: Find book
+      tags:
+      - books
+    put:
+      consumes:
+      - application/json
+      description: change info about book
+      parameters:
+      - description: Book ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: book title
+        in: body
+        name: input
+        schema:
+          $ref: '#/definitions/controllers.UpdateBookInput'
+      produces:
+      - application/json
+      responses: {}
+      summary: Update book
+      tags:
+      - books
+swagger: "2.0"
