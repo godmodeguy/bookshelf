@@ -1,10 +1,15 @@
+.SILENT:
+.PHONY:
 
-run:
-	swag init -g cmd/main.go
-	go run cmd/main.go
+APP=cmd/app/main.go
+PROJECT=learn/easyrest
+
+
+app:
+	swag init -g $(APP)
+	go run $(APP)
 
 fmt:
 	go mod tidy
-	go fmt learn/easyrest/...
+	go fmt $(PROJECT)/...
 	# swag fmt .
-
