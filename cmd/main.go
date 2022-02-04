@@ -1,8 +1,8 @@
 package main
 
 import (
-	"learn/easyrest/controllers"
-	"learn/easyrest/models"
+	"learn/easyrest/pkg/controllers"
+	"learn/easyrest/pkg/models"
 
 	"github.com/gin-gonic/gin"
 )
