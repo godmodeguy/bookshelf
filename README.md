@@ -1,3 +1,3 @@
 # Bookshelf
 
-TODO: rewrite in fastapi
+endpoints:
