@@ -1,0 +1,22 @@
+info:
+  contact: {}
+paths:
+  /books:
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - books
+  /collections:
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - books
+swagger: "2.0"

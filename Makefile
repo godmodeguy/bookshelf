@@ -1,8 +1,8 @@
 .SILENT:
 .PHONY:
 
-APP=cmd/app/main.go
-PROJECT=learn/easyrest
+APP=cmd/main.go
+PROJECT=bookshelf
 
 
 app:
